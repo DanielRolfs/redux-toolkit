@@ -17,7 +17,9 @@ const cartSlice = createSlice({
             /* return {cartItems: []}; delete all props. Good for emptying input fields*/
         },
         removeItem:(state,action)=>{
-            console.log(action);
+            const itemId = action.payload;
+            state.cartItems = state.cartItems.filter((item) => 
+            item.id !== itemId);
         }
     }
 });
